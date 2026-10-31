@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Басты бет | Талғар агробизнес және менеджмент колледжі</title>
+    <style>
+        /* Жалпы стильдер */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Шапка (Header) */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1b5e20;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1b5e20;
+        }
+
+        .btn-nav {
+            background-color: #1b5e20;
+            color: #fff !important;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        /* Басты баннер (Hero Section) */
+        .hero {
+            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(0, 40, 85, 0.75)), url('https://unsplash.com') no-repeat center center/cover;
+            color: #fff;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-main {
+            background-color: #ffb300;
+            color: #000;
+            padding: 12px 28px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #ff8f00;
+        }
+
+        /* Статистика */
+        .stats {
+            padding: 50px 0;
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            margin: 15px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-item h2 {
+            font-size: 40px;
+            color: #1b5e20;
+            margin-bottom: 5px;
+        }
+
+        /* Мамандықтар (Programs) */
+        .programs {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            color: #1b5e20;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #ffb300;
+            margin: 10px auto 0;
+        }
+
+        .grid-programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .program-content {
+            padding: 25px;
+        }
+
+        .program-content h3 {
+            margin-bottom: 12px;
+            color: #1b5e20;
+            font-size: 20px;
+        }
+
+        /* Өтініш беру формасы */
+        .apply {
+            background-color: #1b5e20;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .apply-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .apply-form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .apply-form input, .apply-form select {
+            padding: 14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+            color: #333;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Мобильді құрылғыларға бейімделу */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">🌱 ТАЖМК</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Басты бет</a></li>
+                    <li><a href="#programs-section">Мамандықтар</a></li>
+                    <li><a href="#apply-section">Абитуриентке</a></li>
+                    <li><a href="#" class="btn-nav" onclick="document.getElementById('apply-section').scrollIntoView({behavior: 'smooth'});">Құжат тапсыру</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Басты баннер -->
+    <section class="hero">
+        <div class="container">
+            <h1>Талғар агробизнес және менеджмент колледжі</h1>
+            <p>Ауыл шаруашылығы мен менеджмент саласындағы ең үздік мамандарды даярлау орталығы. Бізбен бірге болашағыңды сенімді құр!</p>
+            <button class="btn-main" onclick="document.getElementById('apply-section').scrollIntoView({behavior: 'smooth'});">Оқуға өтініш беру</button>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h2>Озат</h2>
+                <p>Материалдық-техникалық база</p>
+            </div>
+            <div class="stat-item">
+                <h2>100%</h2>
+                <p>Тәжірибеден өту кепілдігі</p>
+            </div>
+            <div class="stat-item">
+                <h2>Үздік</h2>
+                <p>Білікті оқытушылар құрамы</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Мамандықтар бөлімі -->
+    <section class="programs" id="programs-section">
+        <div class="container">
+            <h2 class="section-title">Біздің мамандықтар</h2>
+            <div class="grid-programs">
+                
+                <!-- 1-мамандық: Агрономия -->
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('https://unsplash.com');"></div>
+                    <div class="program-content">
+                        <h3>Агрономия</h3>
+                        <p>Қазіргі заманғы ауыл шаруашылығы технологияларын, өсімдіктерді өсіруді, өнімділікті арттыруды және жерді тиімді пайдалануды үйреніңіз.</p>
+                    </div>
+                </div>
+
+                <!-- 2-мамандық: Есеп және аудит -->
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('https://unsplash.com');"></div>
+                    <div class="program-content">
+                        <h3>Есеп және аудит</h3>
+                        <p>Бизнес пен агробизнестегі қаржылық есептілікті жүргізу, бухгалтерлік есеп, экономикалық талдау және аудит негіздері.</p>
+                    </div>
+                </div>
+
+                <!-- 3-мамандық: Ветеринария -->
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('https://unsplash.com');"></div>
+                    <div class="program-content">
+                        <h3>Ветеринария</h3>
+                        <p>Жануарлардың денсаулығын күту, аурулардың алдын алу, емдеу және ауыл шаруашылығындағы ветеринарлық-санитарлық қауіпсіздік.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Кері байланыс формасы -->
+    <section class="apply" id="apply-section">
+        <div class="container apply-container">
+            <h2>Оқуға түсуге өтініш қалдырыңыз</h2>
